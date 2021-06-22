@@ -1,13 +1,7 @@
-import styled from 'styled-components';
+import React from 'react';
 
-function Main() {
-  return <Page>MAIN PAGE</Page>;
-}
-
-const Page = styled.div`
-  ${props => props.theme.flexSet()}
-  height : 200px;
-  background-color: black;
-`;
+const Main = () => {
+  return <div></div>;
+};
 
 export default Main;
