@@ -10,7 +10,7 @@ function Routes() {
     <BrowserRouter>
       <Nav />
       <Switch>
-        <Route exact path="/product" component={Product} />
+        <Route exact path="/rooms/:id" component={Product} />
         <Route exact path="/" component={Main} />
       </Switch>
       <Footer />

@@ -38,7 +38,7 @@ function Nav() {
             isActiveMain={isMainPage}
           >
             로그인
-            <span isActiveMain={isMainPage}></span>
+            <span></span>
             회원가입
           </LoginSignButton>
         </Menu>
@@ -59,7 +59,6 @@ const NavWrap = styled.div`
   width: 100%;
   height: 8.5rem;
   padding: 0 2rem 0 3rem;
-  background-color: gray;
 `;
 
 const Logo = styled(Link)`

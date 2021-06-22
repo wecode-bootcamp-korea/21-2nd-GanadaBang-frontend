@@ -258,7 +258,7 @@ const Number = styled.div`
   padding: 0px 15px;
   border-radius: 3px;
   background-color: #545554;
-  color: ${({ theme }) => theme.white};s
+  color: ${({ theme }) => theme.white};
 `;
 
 const PhotoList = styled.div`
