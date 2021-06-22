@@ -1,0 +1,85 @@
+{
+  "result": [
+    {
+      "id": "11140101",
+      "title": "서울특별시 중구 무교동",
+      "geometry": "http://map.vworld.kr/data/geojson/district/11140101.geojson",
+      "point": {
+        "x": "14135245.101613719",
+        "y": "4518585.465639692"
+      }
+    },
+    {
+      "id": "11140102",
+      "title": "서울특별시 중구 다동",
+      "geometry": "http://map.vworld.kr/data/geojson/district/11140102.geojson",
+      "point": {
+        "x": "14135478.695646357",
+        "y": "4518559.960547347"
+      }
+    },
+    {
+      "id": "11140102",
+      "title": "서울특별시 관악구 신림동",
+      "geometry": "http://map.vworld.kr/data/geojson/district/11140102.geojson",
+      "point": {
+        "x": "14135478.695646357",
+        "y": "4518559.960547347"
+      }
+    },
+    {
+      "id": "11140102",
+      "title": "서울특별시 용산구 이태원동",
+      "geometry": "http://map.vworld.kr/data/geojson/district/11140102.geojson",
+      "point": {
+        "x": "14135478.695646357",
+        "y": "4518559.960547347"
+      }
+    },
+    {
+      "id": "11140102",
+      "title": "서울특별시 용산구 용산동",
+      "geometry": "http://map.vworld.kr/data/geojson/district/11140102.geojson",
+      "point": {
+        "x": "14135478.695646357",
+        "y": "4518559.960547347"
+      }
+    },
+    {
+      "id": "11140102",
+      "title": "서울특별시 용산구 청파동",
+      "geometry": "http://map.vworld.kr/data/geojson/district/11140102.geojson",
+      "point": {
+        "x": "14135478.695646357",
+        "y": "4518559.960547347"
+      }
+    },
+    {
+      "id": "11140102",
+      "title": "서울특별시 마포구 아현동",
+      "geometry": "http://map.vworld.kr/data/geojson/district/11140102.geojson",
+      "point": {
+        "x": "14135478.695646357",
+        "y": "4518559.960547347"
+      }
+    },
+    {
+      "id": "11140102",
+      "title": "서울특별시 서대문구 대현동",
+      "geometry": "http://map.vworld.kr/data/geojson/district/11140102.geojson",
+      "point": {
+        "x": "14135478.695646357",
+        "y": "4518559.960547347"
+      }
+    },
+    {
+      "id": "11140102",
+      "title": "서울특별시 서대문구 북아현동",
+      "geometry": "http://map.vworld.kr/data/geojson/district/11140102.geojson",
+      "point": {
+        "x": "14135478.695646357",
+        "y": "4518559.960547347"
+      }
+    }
+  ]
+}
