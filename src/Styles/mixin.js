@@ -5,10 +5,10 @@ const flexSet = (
   items = 'center',
   direction = 'row'
 ) => css`
-display:flex;
-justify-content : ${justify},
-align-items : ${items},
-flex-direction : ${direction}
+  display: flex;
+  justify-content: ${justify};
+  align-items: ${items};
+  flex-direction: ${direction};
 `;
 
 const mixin = { flexSet };
