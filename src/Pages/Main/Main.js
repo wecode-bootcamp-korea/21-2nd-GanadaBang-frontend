@@ -1,15 +1,13 @@
 import { useState, useEffect, useCallback } from 'react';
-import { Link, useLocation, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useOutsideClick } from '../../Utils/inputOutsideClick';
-import SearchModal from '../../Components/SearchModal/SearchModal';
-import RecommedProduct from '../../Components/RecommedProduct/RecommedProduct';
 import { POST_SEARCHFILTERED_API } from '../../config';
-import styled from 'styled-components/macro';
 import { icons } from '../../icons';
+import SearchModal from '../../Components/SearchModal/SearchModal';
+import RecommendProduct from '../../Components/RecommendProduct/RecommendProduct';
+import styled from 'styled-components/macro';
 
 function Main() {
-  const location = useLocation();
-  const history = useHistory();
   const [inputValue, setInputValue] = useState('');
   const [filterData, setFilterData] = useState([]);
   const [randomData, setRandomData] = useState([]);
@@ -80,10 +78,14 @@ function Main() {
               </MoreRoom>
             </RoomSpecWrap>
             <RoomListBox>
-              <RecommedProduct randomData={randomData} />
+              <RecommendProduct randomData={randomData} />
             </RoomListBox>
           </RecommedBox>
         </MainWrap>
+        <BannerSection>
+          <BannerImage src="/image/ganadabangBanner.png"></BannerImage>
+          <BannerBackground />
+        </BannerSection>
       </MainSection>
     </>
   );
@@ -102,7 +104,7 @@ const SearchBackGround = styled.div`
 `;
 
 const MainSection = styled.section`
-  ${props => props.theme.flexSet()};
+  ${props => props.theme.flexSet('center', 'center', 'column')};
   width: 100%;
   margin-top: 10rem;
 `;
@@ -218,6 +220,26 @@ const MoreRoom = styled(Link)`
 const RoomListBox = styled.section`
   ${props => props.theme.flexSet('space-between')};
   margin: 2rem 0;
+`;
+
+const BannerSection = styled.section`
+  ${props => props.theme.flexSet()};
+  position: relative;
+  width: 100%;
+  margin-top: 10rem;
+`;
+
+const BannerImage = styled.img`
+  width: 120rem;
+`;
+
+const BannerBackground = styled.div`
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 18rem;
+  z-index: -1;
+  background-color: #97b7de;
 `;
 
 export default Main;
