@@ -1,11 +1,8 @@
-import { Link, useLocation, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { icons } from '../../icons';
 import styled from 'styled-components/macro';
 
-const RecommedProduct = ({ randomData }) => {
-  const location = useLocation();
-  const history = useHistory();
-
+const RecommendProduct = ({ randomData }) => {
   const changeRoomType = roomType => {
     if (roomType === 'ONE_ROOM') return '원룸';
 
@@ -62,7 +59,7 @@ const RecommedProduct = ({ randomData }) => {
   );
 };
 
-export default RecommedProduct;
+export default RecommendProduct;
 
 const RecommedList = styled(Link)`
   padding-right: 2rem;
