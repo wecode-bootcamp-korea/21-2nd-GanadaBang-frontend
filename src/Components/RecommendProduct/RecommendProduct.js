@@ -19,7 +19,6 @@ const RecommendProduct = ({ randomData }) => {
     console.log(sale);
     const numToString = deposit.toString();
     const saleNumToString = sale.toString();
-    // console.log(numToString);
     if (deposit >= 10000) {
       return ` ${numToString.substring(0, 1)}억${numToString.substring(
         1,
@@ -39,7 +38,6 @@ const RecommendProduct = ({ randomData }) => {
   return (
     <>
       {randomData.map((data, idx) => {
-        console.log(data);
         return (
           <RecommedList key={idx} to={`rooms/${data.id}`}>
             <RoomImageBox>

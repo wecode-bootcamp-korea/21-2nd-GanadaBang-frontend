@@ -15,7 +15,7 @@ function Nav() {
 
   return (
     <>
-      <NavWrap>
+      <NavWrap isActiveMain={isMainPage}>
         <Logo isActiveMain={isMainPage} to="/">
           가나다방
         </Logo>
@@ -83,6 +83,8 @@ const NavWrap = styled.div`
   width: 100%;
   height: 8.5rem;
   padding: 0 2rem 0 3rem;
+  border-bottom: 1px solid
+    ${({ isActiveMain, theme }) => (isActiveMain ? 'none' : '#e7e7e7')};
 `;
 
 const Logo = styled(Link)`

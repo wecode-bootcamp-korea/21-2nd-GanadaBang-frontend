@@ -1,11 +1,11 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
-import { useOutsideClick } from '../../Utils/useOutsideClick';
-import { POST_SEARCHFILTERED_API } from '../../config';
+import { useOutsideClick } from '../../Util/inputOutsideClick';
+import { POST_SEARCHFILTERED_API, POST_RANDOMROOMS_API } from '../../config';
 import { icons } from '../../icons';
 import SearchModal from '../../Components/SearchModal/SearchModal';
 import RecommendProduct from '../../Components/RecommendProduct/RecommendProduct';
-import styled from 'styled-components/macro';
+import styled from 'styled-components/';
 
 function Main() {
   const [inputValue, setInputValue] = useState('');
@@ -31,6 +31,14 @@ function Main() {
         }
       });
   }, [inputValue]);
+
+  useEffect(() => {
+    fetch(`${POST_RANDOMROOMS_API}?keyword_sort=삼성동&offset=0&limit=4`, {
+      method: 'GET',
+    })
+      .then(res => res.json())
+      .then(data => setRandomData(data.result));
+  }, []);
 
   return (
     <>

@@ -5,7 +5,7 @@ const LogoutModal = ({ setIsActive }) => {
 
   const handleLogout = () => {
     localStorage.clear();
-    // Kakao.Auth.logout();
+    Kakao.Auth.logout(console.log('logout되었음'));
     setIsActive(false);
   };
 
