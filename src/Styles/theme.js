@@ -5,6 +5,7 @@ const theme = {
   gray: '#656565',
   blue: '#326CF9',
   yellow: '#F7E506',
+  solidGray: '#cdcdcd',
 };
 
 export default theme;
