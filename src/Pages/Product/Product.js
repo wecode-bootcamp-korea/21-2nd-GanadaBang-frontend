@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components/macro';
 import ListBox from '../../Components/ListBox/ListBox';
-import MapBox from '../Product/MapBox/MapBox';
-import ModalBox from '../Product/Modal/ModalBox';
+// import MapBox from '../Product/MapBox/MapBox';
+// import ModalBox from '../Product/Modal/ModalBox';
 import { POST_ROOMS_API } from '../../config';
 import CookieIcon from '../../Components/CookieIcon/CookieIcon';
 
@@ -13,7 +13,7 @@ function Product() {
   const [product, setProduct] = useState({});
   const [isFixed, setIsFixed] = useState(false);
   const [modal, setModal] = useState(false);
-
+  console.log(useParams());
   const changeRoomType = roomType => {
     if (roomType === 'ONE_ROOM') return '원룸';
 
@@ -52,13 +52,13 @@ function Product() {
     };
   }, []);
 
-  const openModal = () => {
-    setModal(true);
-  };
+  // const openModal = () => {
+  //   setModal(true);
+  // };
 
-  const closeModal = () => {
-    setModal(false);
-  };
+  // const closeModal = () => {
+  //   setModal(false);
+  // };
 
   useEffect(() => {
     fetch(`${POST_ROOMS_API}/${id}`, {
@@ -68,15 +68,8 @@ function Product() {
       .then(function (res) {
         console.log(res.message);
         setProduct(res.message);
-        // data를 응답 받은 후의 로직
       });
   }, []);
-
-  // useEffect(() => {
-  //   fetch(`/data/mainProductList.json`)
-  //     .then(res => res.json())
-  //     .then(res => setRecommed(res));
-  // }, []);
 
   return (
     <>
@@ -138,31 +131,34 @@ function Product() {
             <PhotoList>
               {/* <ModalBox product={product} /> */}
               <PhotoMain>
-                <Img alt="방안내사진" src={product?.image} />
+                <Img alt="방안내사진" src={product.image && product.image[0]} />
               </PhotoMain>
               <PhotoSide>
                 <div>
-                  <Img alt="방사이드" src={product?.image} />
+                  <Img alt="방사이드" src={product.image && product.image[1]} />
                 </div>
                 <div>
-                  <Img alt="방사이드" src={product?.image} />
+                  <Img alt="방사이드" src={product.image && product.image[2]} />
                 </div>
                 <div>
-                  <Img alt="방사이드" src={product?.image} />
+                  <Img alt="방사이드" src={product.image && product.image[3]} />
                 </div>
                 <SideSlide>
                   <SlidesPlus>
                     {/* <ModalBox product={product} /> */}
                   </SlidesPlus>
-                  <Img alt="방안내사진" src={product?.image} />
+                  <Img
+                    alt="방안내사진"
+                    src={product.image && product.image[4]}
+                  />
                 </SideSlide>
               </PhotoSide>
             </PhotoList>
           </Photo>
           <div>
             <TextDetail>
-              <TextContent>{product.content}</TextContent>
-              <TextContentDetail>강남구 삼성동에 있는 원룸</TextContentDetail>
+              <TextContent>{product.title}</TextContent>
+              <TextContentDetail>{product.content}</TextContentDetail>
             </TextDetail>
           </div>
         </Container>

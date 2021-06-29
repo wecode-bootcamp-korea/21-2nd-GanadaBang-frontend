@@ -11,6 +11,7 @@ const KakaoLogin = ({ isLoginActive, setIsLoginActive }) => {
     try {
       Kakao.Auth.login({
         success: auth => {
+          console.log(auth.access_token);
           fetch(`${POST_KAKAOLOGIN_API}`, {
             method: 'POST',
             headers: {
@@ -33,7 +34,7 @@ const KakaoLogin = ({ isLoginActive, setIsLoginActive }) => {
             });
         },
         fail: err => {
-          console.error(err);
+          console.error(err, 'fail');
         },
       });
     } catch (err) {
