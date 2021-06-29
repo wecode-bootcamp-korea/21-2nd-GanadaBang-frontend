@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
-import { useOutsideClick } from '../../Utils/inputOutsideClick';
+import { useOutsideClick } from '../../Util/inputOutsideClick';
 import { POST_SEARCHFILTERED_API } from '../../config';
 import { icons } from '../../icons';
 import SearchModal from '../../Components/SearchModal/SearchModal';
