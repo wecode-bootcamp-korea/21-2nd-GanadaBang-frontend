@@ -3,12 +3,13 @@ import styled from 'styled-components/macro';
 import ListBox from '../../Components/ListBox/ListBox';
 import MapBox from '../Product/MapBox/MapBox';
 import ModalBox from '../Product/Modal/ModalBox';
-import { POST_DETAILPAGE_API } from '../../config';
+import { POST_ROOMS_API } from '../../config';
 import CookieIcon from '../../Components/CookieIcon/CookieIcon';
 
-import { Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 function Product() {
+  const { id } = useParams();
   const [product, setProduct] = useState({});
   const [isFixed, setIsFixed] = useState(false);
   const [modal, setModal] = useState(false);
@@ -60,7 +61,7 @@ function Product() {
   };
 
   useEffect(() => {
-    fetch(`${POST_DETAILPAGE_API}/1`, {
+    fetch(`${POST_ROOMS_API}/${id}`, {
       method: 'GET',
     })
       .then(res => res.json())
@@ -248,9 +249,9 @@ function Product() {
                 {product.dong}
                 {product.detail}
               </DetailLocation>
-              <LocationMap>
+              {/* <LocationMap>
                 <MapBox />
-              </LocationMap>
+              </LocationMap> */}
             </Location>
             <a name="Recommendation" />
             <Recommendation>

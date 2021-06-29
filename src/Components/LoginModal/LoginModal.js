@@ -34,6 +34,7 @@ export default LoginModal;
 const LoginBackground = styled.div`
   ${({ theme }) => theme.flexSet()};
   position: fixed;
+  top: 0;
   width: 100vw;
   height: 100vh;
   background-color: #000000b3;

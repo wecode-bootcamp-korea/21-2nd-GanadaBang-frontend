@@ -13,14 +13,14 @@ function NaverMapAPI({ product }) {
       defaultCenter={{ lat: 37.50637292, lng: 127.0536407 }}
       defaultZoom={20}
     >
-      <Marker
+      {/* <Marker
         key={1}
         position={new navermaps.LatLng(37.50637292, 127.0536407)}
         animation={2}
         onClick={() => {
           alert('가나다방입니다');
         }}
-      />
+      /> */}
     </NaverMap>
   );
 }
