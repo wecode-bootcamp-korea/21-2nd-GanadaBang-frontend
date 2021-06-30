@@ -1,0 +1,85 @@
+[
+  {
+  "id": 6,
+  "title": "투룸1",
+  "content": "매물정보 투룸 1 풀옵션",
+  "floor": 6,
+  "room_count": 2,
+  "room_area": 32.89,
+  "desposit": 2000,
+  "monthly_rent": 65,
+  "sale": 0,
+  "room_type": "MULTI_ROOM",
+  "trade_type": "MONTHLY_RENT",
+  "room_image": "https://i.imgur.com/e6TqL7X.png",
+  "state": "서울특별시",
+  "city": "서초구",
+  "dong": "서초동",
+  "location": {
+      "x": 127.01107,
+      "y": 37.48030346
+  }
+},
+{
+  "id": 7,
+  "title": "투룸2",
+  "content": "매물정보 투룸 2 풀옵션",
+  "floor": 7,
+  "room_count": 2,
+  "room_area": 36.7,
+  "desposit": 2500,
+  "monthly_rent": 75,
+  "sale": 0,
+  "room_type": "MULTI_ROOM",
+  "trade_type": "MONTHLY_RENT",
+  "room_image": "https://i.imgur.com/mjVjiL5.png",
+  "state": "서울특별시",
+  "city": "서초구",
+  "dong": "서초동",
+  "location": {
+      "x": 127.0051045,
+      "y": 37.49061546
+  }
+},
+{
+  "id": 8,
+  "title": "투룸3",
+  "content": "매물정보 투룸 3 풀옵션",
+  "floor": 8,
+  "room_count": 2,
+  "room_area": 40.52,
+  "desposit": 3000,
+  "monthly_rent": 70,
+  "sale": 0,
+  "room_type": "MULTI_ROOM",
+  "trade_type": "MONTHLY_RENT",
+  "room_image": "https://i.imgur.com/Dh0muvn.png",
+  "state": "서울특별시",
+  "city": "서초구",
+  "dong": "서초동",
+  "location": {
+      "x": 127.0089479,
+      "y": 37.49139536
+  }
+},
+{
+  "id": 11,
+  "title": "쓰리룸1",
+  "content": "매물정보 쓰리룸 1 풀옵션",
+  "floor": 11,
+  "room_count": 3,
+  "room_area": 51.96,
+  "desposit": 3000,
+  "monthly_rent": 105,
+  "sale": 0,
+  "room_type": "MULTI_ROOM",
+  "trade_type": "MONTHLY_RENT",
+  "room_image": "https://i.imgur.com/iHRnG60.png",
+  "state": "경기도 ",
+  "city": "성남시 분당구",
+  "dong": "삼평동",
+  "location": {
+      "x": 127.1085979,
+      "y": 37.39942931
+  }
+]
