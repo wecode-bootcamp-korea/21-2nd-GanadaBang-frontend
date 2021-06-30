@@ -1,14 +1,18 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useOutsideClick } from '../../Util/inputOutsideClick';
 import MenuButtons from '../MenuButton.js/MenuButton';
-// import LoginModal from '../LoginModal/LoginModal';
-import styled from 'styled-components';
+import LoginModal from '../LoginModal/LoginModal';
+import LogoutModal from '../LogoutModal/LogoutModal';
+import styled from 'styled-components/macro';
 
 function Nav() {
   const location = useLocation();
   const isMainPage = location.pathname === '/';
+  const { isActive, setIsActive, inputEl } = useOutsideClick();
 
-  const [isLoginModal, setIsLoginModal] = useState(false);
+  const [isLoginActive, setIsLoginActive] = useState(false);
+
   return (
     <>
       <NavWrap>
@@ -33,22 +37,41 @@ function Nav() {
               <MenuButtons path="/alram" name="알람" />
             </NavList>
           </NavUl>
-          <LoginSignButton
-            onClick={() => setIsLoginModal(!isLoginModal)}
-            isActiveMain={isMainPage}
-          >
-            로그인
-            <span></span>
-            회원가입
-          </LoginSignButton>
+
+          {localStorage.getItem('KakaoToken') ? (
+            <UserWrap ref={inputEl}>
+              <UserImage src={localStorage.getItem('UserProfileImage')} />
+              <UserName
+                isActiveMain={isMainPage}
+                onClick={() => setIsActive(!isActive)}
+              >
+                {localStorage.getItem('UserNickName')} 님
+              </UserName>
+              {isActive && (
+                <LogoutModal
+                  setIsActive={setIsActive}
+                  isMainPage={isMainPage}
+                ></LogoutModal>
+              )}
+            </UserWrap>
+          ) : (
+            <LoginSignButton
+              onClick={() => setIsLoginActive(!isLoginActive)}
+              isActiveMain={isMainPage}
+            >
+              로그인
+              <span />
+              회원가입
+            </LoginSignButton>
+          )}
         </Menu>
       </NavWrap>
-      {/* {isLoginModal && (
+      {isLoginActive && (
         <LoginModal
-          isLoginModal={isLoginModal}
-          setIsLoginModal={setIsLoginModal}
+          isLoginActive={isLoginActive}
+          setIsLoginActive={setIsLoginActive}
         />
-      )} */}
+      )}
     </>
   );
 }
@@ -56,6 +79,7 @@ function Nav() {
 const NavWrap = styled.div`
   ${({ theme }) => theme.flexSet('space-between')};
   position: absolute;
+  top: 0;
   width: 100%;
   height: 8.5rem;
   padding: 0 2rem 0 3rem;
@@ -78,6 +102,28 @@ const NavUl = styled.ul`
 
 const NavList = styled.li`
   padding: 0 2rem;
+`;
+
+const UserWrap = styled.div`
+  ${({ theme }) => theme.flexSet('flex-end')};
+  width: 15.5rem;
+  height: 4rem;
+  margin-left: 2.6rem;
+  padding-right: 2rem;
+`;
+
+const UserImage = styled.img`
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 100%;
+`;
+
+const UserName = styled.span`
+  margin-left: 1rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: ${({ isActiveMain }) => (isActiveMain ? '#ffffffcc' : 'black')};
+  cursor: pointer;
 `;
 
 const LoginSignButton = styled.button`

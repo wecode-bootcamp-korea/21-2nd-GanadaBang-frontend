@@ -152,7 +152,7 @@ const FooterLink = styled(Link)`
   font-weight: 400;
 `;
 
-const FooterBoldLink = styled(Link)`
+const FooterBoldLink = styled(FooterLink)`
   color: white;
   font-weight: 700;
 `;
@@ -201,7 +201,7 @@ const TopIcon = styled.img`
   transform: rotate(180deg);
 `;
 
-const TopContext = styled(Link)`
+const TopContext = styled.button`
   font-size: 1.3rem;
   color: #aaaaaa;
 `;

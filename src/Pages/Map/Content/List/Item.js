@@ -3,13 +3,13 @@ import styled from 'styled-components';
 import { getRoomTypeName } from '../../../../Util/getTypeName';
 
 export default function ListItem({
-  room: { id, img_url, title, room_type, content, state, city, dong },
+  room: { id, room_image, title, room_type, content, state, city, dong },
 }) {
   return (
     <Container>
       <Link to={`rooms/${id}`}>
         <ImgWrapper>
-          <img src={img_url} alt="방이미지" />
+          <img src={room_image} alt="방이미지" />
         </ImgWrapper>
         <Content>
           <Title>{title}</Title>
