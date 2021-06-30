@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
-import { useOutsideClick } from '../../Util/useOutsideClick';
-import { POST_SEARCHFILTERED_API, POST_RANDOMROOMS_API } from '../../config';
+import { useOutsideClick } from '../../Utils/useOutsideClick';
+import { POST_SEARCHFILTERED_API } from '../../config';
 import { icons } from '../../icons';
 import SearchModal from '../../Components/SearchModal/SearchModal';
 import RecommendProduct from '../../Components/RecommendProduct/RecommendProduct';
@@ -31,12 +31,6 @@ function Main() {
         }
       });
   }, [inputValue]);
-
-  useEffect(() => {
-    fetch(`${POST_RANDOMROOMS_API}?keyword_sort=삼평동&offset=1&limit=4`)
-      .then(res => res.json())
-      .then(res => setRandomData(res.result));
-  }, [setRandomData]);
 
   return (
     <>
