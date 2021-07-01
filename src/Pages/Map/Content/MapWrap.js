@@ -46,10 +46,22 @@ export default function MapWrap() {
 
   const getCurrentPosition = () => {
     return new Promise(resolve => {
-      navigator.geolocation.getCurrentPosition(position => {
+      const options = {
+        enableHighAccuracy: true,
+        timeout: 5000,
+        maximumAge: 0,
+      };
+
+      function success(position) {
         const { latitude, longitude } = position.coords;
         return resolve({ lat: latitude, lng: longitude });
-      });
+      }
+
+      function error(err) {
+        return resolve({ lat: 37.5061144, lng: 127.0538923 });
+      }
+
+      navigator.geolocation.getCurrentPosition(success, error, options);
     });
   };
 
