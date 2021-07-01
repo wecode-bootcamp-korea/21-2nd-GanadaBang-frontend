@@ -15,15 +15,20 @@ const RecommendProduct = ({ randomData }) => {
     return tradeType === 'DEPOSIT' ? '전세' : '매매';
   };
 
-  const changePrice = (deposit, monthlyRent) => {
+  const changePrice = (deposit, monthlyRent, sale) => {
+    console.log(sale);
     const numToString = deposit.toString();
+    const saleNumToString = sale.toString();
+    // console.log(numToString);
     if (deposit >= 10000) {
       return ` ${numToString.substring(0, 1)}억${numToString.substring(
         1,
         numToString.length
       )}`;
+    } else if (deposit === 0) {
+      return ` ${saleNumToString.substring(0, 1)}억`;
     } else {
-      return ` ${deposit}/${monthlyRent}`;
+      return ` ${numToString}/${monthlyRent}`;
     }
   };
 
@@ -34,6 +39,7 @@ const RecommendProduct = ({ randomData }) => {
   return (
     <>
       {randomData.map((data, idx) => {
+        console.log(data);
         return (
           <RecommedList key={idx} to={`rooms/${data.id}`}>
             <RoomImageBox>
@@ -45,7 +51,7 @@ const RecommendProduct = ({ randomData }) => {
             <RoomCondition>{changeRoomType(data.room_type)}</RoomCondition>
             <RoomTitle>
               {changeTradeType(data.trade_type)}
-              {changePrice(data.deposit, data.monthly_rent)}
+              {changePrice(data.deposit, data.monthly_rent, data.sale)}
             </RoomTitle>
             <RoomContext>
               {changeFloor(data.floor, data.room_area)}
