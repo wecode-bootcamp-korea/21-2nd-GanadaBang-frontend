@@ -69,6 +69,7 @@ export default function MapWrap() {
     const currentZoom = naverMap.getZoom();
     setZoom(currentZoom);
     handleCurrentBounds();
+    handlePolyPath();
   };
 
   const handleCurrentBounds = () => {
