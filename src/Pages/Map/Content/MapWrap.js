@@ -41,11 +41,17 @@ export default function MapWrap() {
         return getCurrentPosition();
       }
     };
-    getInitPosition().then(res => setInitPosition(res));
+
+    getInitPosition()
+      .then(res => setInitPosition(res))
+      .catch(err => {
+        console.log(err);
+        setInitPosition({ lat: 37.5061144, lng: 127.0538923 });
+      });
   }, [location.search]);
 
   const getCurrentPosition = () => {
-    return new Promise(resolve => {
+    return new Promise((resolve, reject) => {
       const options = {
         enableHighAccuracy: true,
         timeout: 5000,
@@ -58,7 +64,7 @@ export default function MapWrap() {
       }
 
       function error(err) {
-        return resolve({ lat: 37.5061144, lng: 127.0538923 });
+        return reject(err);
       }
 
       navigator.geolocation.getCurrentPosition(success, error, options);
