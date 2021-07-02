@@ -54,14 +54,17 @@ const ImgWrapper = styled.div`
 
 const Content = styled.div`
   flex: 1;
+  max-width: 200px;
   padding-left: 20px;
 `;
 
 const Title = styled.h1`
   font-size: 18px;
   font-weight: 700;
-  height: 27px;
+  height: 20px;
   margin-bottom: 4px;
+  text-overflow: ellipsis;
+  overflow: hidden;
 `;
 
 const RoomType = styled.p`
@@ -75,6 +78,7 @@ const RoomType = styled.p`
 const Desc = styled.p`
   font-size: 14px;
   font-weight: 300;
+  height: 30px;
   text-overflow: ellipsis;
   overflow: hidden;
 `;
