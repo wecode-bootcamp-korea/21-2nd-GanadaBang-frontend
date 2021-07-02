@@ -28,7 +28,7 @@
 - 내부의 로직을 분석하여 클론 웹 사이트에 적용
 
 ### 데모 영상
-![](<iframe width="560" height="315" src="https://www.youtube.com/embed/7CsPs1Z8SDY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>)
+![](https://youtu.be/7CsPs1Z8SDY)
 
 ### 적용 기술
 >- Front-End : <img src="https://img.shields.io/badge/ES6+-F7DF1E?style=for-the-badge&logo=javascript&logoColor=white"/>&nbsp;<img src="https://img.shields.io/badge/React.js-61DAFB?style=for-the-badge&logo=React&logoColor=white"/>&nbsp;<img src="https://img.shields.io/badge/React%20Router-CA4245?style=for-the-badge&logo=React-router&logoColor=white"/>&nbsp;<img src="https://img.shields.io/badge/Styled Components-CC6699?style=for-the-badge&logo=Styled-Components&logoColor=white"/>
